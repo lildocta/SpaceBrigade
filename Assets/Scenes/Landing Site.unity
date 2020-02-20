@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTag: Player
-  RotateSpeed: 1
+  RotateSpeed: 0.7
   Radius: 3.14
   droneCount: 0
   body: {fileID: 0}
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: Lead Drone 1
   RotateSpeed: 0.7
-  Radius: 1.5
+  Radius: 1
   droneCount: 2
   body: {fileID: 0}
 --- !u!95 &221947696
@@ -381,7 +381,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 6258804206782434786, guid: 5948ecd0d3b374915b3889c444d01fe1,
     type: 3}
-  m_Color: {r: 0.6367924, g: 0.7143991, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   movement: {x: 0, y: 0}
-  body: {fileID: 0}
+  rbody: {fileID: 0}
 --- !u!50 &507132847
 Rigidbody2D:
   serializedVersion: 4
@@ -537,8 +537,8 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c5c05b689409f419c8bde3442edc05f0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
+  m_CullingMode: 1
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: Lead Drone 1
   RotateSpeed: 0.7
-  Radius: 1.5
+  Radius: 1
   droneCount: 3
   body: {fileID: 0}
 --- !u!95 &693076463
@@ -663,7 +663,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 6258804206782434786, guid: 5948ecd0d3b374915b3889c444d01fe1,
     type: 3}
-  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTag: Lead Drone 1
   RotateSpeed: 0.7
-  Radius: 1.5
+  Radius: 1
   droneCount: 1
   body: {fileID: 0}
 --- !u!95 &1591368956
@@ -805,7 +805,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 6258804206782434786, guid: 5948ecd0d3b374915b3889c444d01fe1,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

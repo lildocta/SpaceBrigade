@@ -5,26 +5,33 @@ using UnityEngine;
 public class AstronautMovement : MonoBehaviour
 {
     [SerializeField]
-    private float movementSpeed = 4;   //Movement Speed of the Player
-    public Vector2 movement;           //Movement Axis
-    public Rigidbody2D body;      //Player Rigidbody Component
+    private float movementSpeed = 4f;   //Movement Speed of the Player
+    public Vector2 movement;            //Movement Axis
+    public Rigidbody2D rbody;           //Player Rigidbody Component
+    private Vector2 newPos;      
+    //IsometricCharacterRenderer isoRenderer;
 
     void Start ()
     {
+        //starting position
         movement = new Vector2(0.0f, 0.0f);
-        body = GetComponent<Rigidbody2D>();
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        // Gives a value between -1 and 1
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        movement = movement.normalized;
+        Vector2 currentPos = rbody.position;
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
+        inputVector = Vector2.ClampMagnitude(inputVector, 1);
+        movement = inputVector * movementSpeed;
+        newPos = currentPos + movement * Time.fixedDeltaTime;
+        //isoRenderer.SetDirection(movement);
     }
 
     void FixedUpdate()
     {
-        body.MovePosition(body.position + (movement * movementSpeed * Time.fixedDeltaTime));
+        rbody.MovePosition(newPos);
     }
 }

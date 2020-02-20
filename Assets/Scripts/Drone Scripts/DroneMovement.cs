@@ -34,7 +34,6 @@ public class DroneMovement : MonoBehaviour
         center = objectToOrbit.transform.position;
         oldCos = Mathf.Cos(angle);
         angle += RotateSpeed * Time.deltaTime * speedChange;
-        Debug.Log(Time.deltaTime);
         Vector2 offset;
         
         if(objectTag == "Lead Drone 1"){
@@ -43,7 +42,6 @@ public class DroneMovement : MonoBehaviour
         } else {
             //Clockwise
             offset = new Vector2(Mathf.Sin(angle + droneCount) * Radius, Mathf.Cos(angle + droneCount) * (Radius/2));
-        
         }
         
         transform.position = center + offset;
